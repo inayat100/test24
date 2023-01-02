@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- THIS IS FIRST HOSPITAL record -->
+    <!-- to know -->
+    <record id="hospital" model="ir.ui.view">
+        <field name="name">hospital.view.tree</field>
+        <field name="model">hospital</field>
+        <!-- to know -->
+        <field name="arch" type="xml">
+            <!-- to know -->
+            <tree string="school">
+                <field name="hospital_name"/>
+                <field name="image" widget="image" height="25"/>
+                <field name="street1"/>
+                <field name="street2"/>
+                <field name="city"/>
+                <field name="state"/>
+                <field name="zip"/>
+                <field name="country"/>
+            </tree>
+        </field>
+    </record>
+    <!-- THIS IS FORM VIEWS  -->
+    <!-- to know -->
+    <record id="hospital2" model="ir.ui.view">
+        <field name="name">hospital.view.form</field>
+        <field name="model">hospital</field>
+        <!-- to know -->
+        <field name="arch" type="xml">
+            <form string="form_view">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="image" widget="image" height="100"/>
+                        </group>
+                        <group>
+                            <field name="hospital_name"/>
+                        </group>
+                    </group>
+                    <separator string="Address"/>
+                    <group col="2">
+                        <group>
+                            <field name="street1"/>
+                            <field name="city"/>
+                            <field name="zip"/>
+                        </group>
+                        <group>
+                            <field name="street2"/>
+                            <field name="state"/>
+                            <field name="country"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- THIS IS HOSPITAL ACTION   -->
+    <!-- to know -->
+    <record id="hospital_action" model="ir.actions.act_window">
+        <field name="name">HOSPITAL</field>
+        <field name="res_model">hospital</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- MEMU ITEMS LIST FROM HERE  -->
+    <menuitem id="hospital_menu" name="HOSPITAL"/>
+    <menuitem id="hospital_sub_menu1" parent="hospital_menu" name="HOSPITAL"/>
+    <!-- to know -->
+    <menuitem id="hospital_sub_menu2" parent="hospital_sub_menu1" action="hospital_action" name="HOSPITAL"/>
+</odoo>

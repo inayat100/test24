@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="select_tree" model="ir.ui.view">
+        <field name="name">Select.Tree</field>
+        <field name="model">selectstudent</field>
+        <field name="arch" type="xml">
+            <tree string="Selected Student">
+                <field name="name" />
+                <field name="last_name" />
+                <field name="age" />
+                <field name="gender" />
+                <field name="email" />
+                <field name="city" />
+            </tree>
+        </field>
+    </record>
+    <record id="select_form" model="ir.ui.view">
+        <field name="name">Select Form</field>
+        <field name="model">selectstudent</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Select Form">
+                    <group col="2">
+                        <group>
+                            <field name="image" widget="image"/>
+                            <field name="name" />
+                            <field name="last_name" />
+                            <field name="age" />
+                            <field name="gender" />
+                        </group>
+                        <group>
+                            <field name="email" />
+                            <field name="city" />
+                            <field name="state" />
+                            <field name="country" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="select_action" model="ir.actions.act_window">
+        <field name="name">Select Action</field>
+        <field name="res_model">selectstudent</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="select_student" parent="hospital_menu" name="Selected Student"/>
+    <menuitem id="select_student2" parent="select_student" action="select_action" name="Selected Student"/>
+</odoo>
